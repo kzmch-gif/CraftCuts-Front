@@ -54,6 +54,7 @@
     width: fit-content;
     padding-top: 10px;
     text-align: left;
+    margin-right: 15px;
 }
 
 .h6text {
@@ -78,4 +79,16 @@
     margin-left: 20px;
     color: #718096;
     margin-bottom: 20px;
+}
+
+.read {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 13px;
+    /* 800 */
+    color: #2D3748;
+    margin-left: auto;
+    margin-right: 20px;
 }

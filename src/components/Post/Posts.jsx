@@ -27,30 +27,33 @@ const Posts = (props) => {
                         <h6 className = {s.h6text}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....</h6>
                         <div className = {s.row}>
                             <h6 className = {s.date}>May 20th 2020</h6>
+                            <h5 className = {s.read}>Read more</h5>
                         </div>
                     </div>
                 </div>
                 <div className = {s.col_4} >
                     <div>
-                        <img className = {s.img1} src = {img1} alt = "cut1"></img>
+                        <img className = {s.img1} src = {img2} alt = "cut1"></img>
                     </div>
                     <div className = {s.textcard}>
-                        <h4 className = {s.h4_cut}>Топ стрижек 2022</h4>
+                        <h4 className = {s.h4_cut}>Выбор кресла для барберов</h4>
                         <h6 className = {s.h6text}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....</h6>
                         <div className = {s.row}>
                             <h6 className = {s.date}>May 20th 2020</h6>
+                            <h5 className = {s.read}>Read more</h5>
                         </div>
                     </div>
                 </div> 
                 <div className = {s.col_4} >
                     <div>
-                        <img className = {s.img1} src = {img1} alt = "cut1"></img>
+                        <img className = {s.img1} src = {img3} alt = "cut1"></img>
                     </div>
                     <div className = {s.textcard}>
-                        <h4 className = {s.h4_cut}>Топ стрижек 2022</h4>
+                        <h4 className = {s.h4_cut}>Как выбрать “своего” мастера</h4>
                         <h6 className = {s.h6text}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....</h6>
                         <div className = {s.row}>
                             <h6 className = {s.date}>May 20th 2020</h6>
+                            <h5 className = {s.read}>Read more</h5>
                         </div>
                     </div>
                 </div>
