@@ -30,7 +30,7 @@ export default function Login() {
                     <Form onSubmit={handleSubmit} >
                         <Form.Group size="lg" controlId="email" >
                             <Form.Label>Email</Form.Label>
-                            <Form.Control
+                            <Form.Control  width = "75%"
                                 autoFocus
                                 type="email"
                                 value={email}
@@ -39,7 +39,7 @@ export default function Login() {
                         </Form.Group>
                         <Form.Group size="lg" controlId="password">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control
+                            <Form.Control width = "75%"
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)} className={s.password_input}

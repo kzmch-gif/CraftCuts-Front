@@ -61,12 +61,12 @@
 }
 
 .email_input{
-    width: 75%;
+    width: 75% !important;
 }
 
 .password_input{
     margin-bottom: 25px;
-    width: 75%;
+    width: 75% !important;
 }
 
 .btn_login{
