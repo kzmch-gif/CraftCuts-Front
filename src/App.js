@@ -9,6 +9,7 @@ import { Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import Cabinet from "./components/UserCabinet/Cabinet";
 import Login from "./components/Login/Login";
+import AllPosts from "./components/Post/AllPost";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path = "/post" component={Posts} />
         <Route path = "/dialogs" component={Dialogs} />
         <Route path = "/login" component = {Login}/>
+        <Route path = "/AllPost" component = {AllPosts}/>
         {/* <MyPosts/> 
       <Dialogs/> */}
         <Footer />
