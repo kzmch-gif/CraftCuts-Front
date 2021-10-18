@@ -41,7 +41,7 @@ const Posts = (props) => {
                             <h6 className = {s.date}>May 20th 2020</h6>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <div className = {s.col_4} >
                     <div>
                         <img className = {s.img1} src = {img1} alt = "cut1"></img>
