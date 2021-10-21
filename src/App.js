@@ -11,15 +11,9 @@ import Cabinet from "./components/UserCabinet/Cabinet";
 import Login from "./components/Login/Login";
 import AllPosts from "./components/Post/AllPost";
 
-const App = () => {
+const App = (props) => {
 
-  let postsData = [{
-    id: 1, texthead: 'Топ стрижек 2021', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-}, {
-    id: 2, texthead: 'Выбор кресла для барберов', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-}, {
-    id: 3, texthead: 'Как выбрать “своего” мастера', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-}];
+ 
 
   return (
     <BrowserRouter>
@@ -29,7 +23,7 @@ const App = () => {
         <Route path = "/post" render = { () => <Posts /> }/>
         <Route path = "/dialogs" render = { () => <Dialogs /> }/>
         <Route path = "/login" render = { () => <Login /> }/>
-        <Route path = "/AllPost" render = { () => <AllPosts postsData = {postsData}  /> }/>
+        <Route path = "/AllPost" render = { () => <AllPosts postsData = {props.postsData}  /> }/>
         <Route path = "/cabinet" render = { () => <Cabinet /> }/>
       
         <Footer />
