@@ -12,20 +12,18 @@ import Login from "./components/Login/Login";
 import AllPosts from "./components/Post/AllPost";
 
 const App = (props) => {
-
- 
-
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
+        
         <Route path = "/main" render = { () => <MainSlider /> }/>
         <Route path = "/post" render = { () => <Posts /> }/>
         <Route path = "/dialogs" render = { () => <Dialogs /> }/>
         <Route path = "/login" render = { () => <Login /> }/>
-        <Route path = "/AllPost" render = { () => <AllPosts postsData = {props.postsData}  /> }/>
+        <Route path = "/AllPost" render = { () => <AllPosts postsData = {props.appState.postsData}  /> }/>
         <Route path = "/cabinet" render = { () => <Cabinet /> }/>
-      
+
         <Footer />
       </div>
     </BrowserRouter>
