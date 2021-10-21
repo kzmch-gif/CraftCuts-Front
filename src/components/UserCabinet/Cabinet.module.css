@@ -27,6 +27,8 @@
     background: rgba(255, 249, 241, 0.75);
     border-radius: 15px;
     padding-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .change {
@@ -221,7 +223,18 @@ margin-left: 10px;
     height: 25px;
     margin-left: auto;
     margin-right: 25px;
+background-image: url("./heart.png");
+border: none;
+background-color: transparent;
+background-size: 25px 25px;
+background-repeat: no-repeat;
 
+}
+
+.starpic:focus{
+background-image: url("./heart_fill.png");
+background-repeat: no-repeat;
+width: 25px;
 }
 
 

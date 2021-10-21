@@ -3,7 +3,7 @@ import s from "./Cabinet.module.css";
 import { NavLink } from "react-router-dom";
 import Header from "../Header_Footer/Header";
 import usericon from "../UserCabinet/user_icon.png";
-import starpic from "../UserCabinet/Star.png";
+import starpic from "../UserCabinet/heart.png";
 
 const Cabinet = () => {
   <Header />;
@@ -41,7 +41,7 @@ const Cabinet = () => {
         <div className = {s.receptions_block}>
             <div className = {s.row}>
                 <h5 className = {s.h5_resept}>Ваши записи</h5>
-                <h6 className = {s.h6_resept}>Посмотреть все</h6>
+                <NavLink to = "#" className = {s.h6_resept}>Посмотреть все</NavLink>
             </div>
             <div className = {s.near}><span>Ближайшие</span></div>
             <div className = "coming"><span></span></div>
@@ -50,7 +50,7 @@ const Cabinet = () => {
                 <span className = {s.textspan}>Барбер Дима - </span>
                 <span className = {s.textspan}>Стрижка - </span>
                 <span className = {s.textspan}>12.06 16:00</span>
-                <img className = {s.starpic} src = {starpic} alt = "starpic"></img>
+                <button className = {s.starpic}></button>
             </div>
             <div className = {s.near}><span>Предстоящие</span></div>
             <div className={`${s.row} ${s.row1}`}>
@@ -58,7 +58,7 @@ const Cabinet = () => {
                 <span className = {s.textspan}>Барбер Дима - </span>
                 <span className = {s.textspan}>Стрижка - </span>
                 <span className = {s.textspan}>15.08 16:00</span>
-                <img className = {s.starpic} src = {starpic} alt = "starpic"></img>
+                <button className = {s.starpic}></button>
             </div>
             <NavLink
                   className={` ${s.btn_online}`}

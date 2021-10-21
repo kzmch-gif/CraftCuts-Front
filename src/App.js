@@ -12,17 +12,26 @@ import Login from "./components/Login/Login";
 import AllPosts from "./components/Post/AllPost";
 
 const App = () => {
+
+  let postsData = [{
+    id: 1, texthead: 'Топ стрижек 2021', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
+}, {
+    id: 2, texthead: 'Выбор кресла для барберов', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
+}, {
+    id: 3, texthead: 'Как выбрать “своего” мастера', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
+}];
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Route path = "/main" component={MainSlider} />
-        <Route path = "/post" component={Posts} />
-        <Route path = "/dialogs" component={Dialogs} />
-        <Route path = "/login" component = {Login}/>
-        <Route path = "/AllPost" component = {AllPosts}/>
-        {/* <MyPosts/> 
-      <Dialogs/> */}
+        <Route path = "/main" render = { () => <MainSlider /> }/>
+        <Route path = "/post" render = { () => <Posts /> }/>
+        <Route path = "/dialogs" render = { () => <Dialogs /> }/>
+        <Route path = "/login" render = { () => <Login /> }/>
+        <Route path = "/AllPost" render = { () => <AllPosts postsData = {postsData}  /> }/>
+        <Route path = "/cabinet" render = { () => <Cabinet /> }/>
+      
         <Footer />
       </div>
     </BrowserRouter>
