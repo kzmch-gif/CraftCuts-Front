@@ -14,11 +14,22 @@ import AllPosts from "./AllPost";
 
 
 const Posts = (props) => {
+
+    let newPostElement = React.createRef();//создаем ссылку
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+    }
+
     return (
         <div className={s.blog}>
             <h1 className={s.blogh1}>Блог</h1>
+            <textarea ref = {newPostElement}></textarea> 
+            <button type = "button" className = {s.btn_onclick} onClick = { addPost }>add</button>
             <div className={s.container}>
                 <div className={s.row}>
+               
                     <div className={s.col_4} >
                         <div>
                             <img className={s.img1} src={img1} alt="cut1"></img>
@@ -60,7 +71,7 @@ const Posts = (props) => {
                     </div>
                 </div>
                 <div className = {s.btn_div}>
-                <NavLink className = {s.btn_wtch}  to="/AllPost" >Посмотреть все</NavLink></div>
+                <NavLink className = {s.btn_wtch}  to="/AllPost" addPost = {props.addPost}  >Посмотреть все</NavLink></div>
             </div>
         </div>
     );

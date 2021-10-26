@@ -27,14 +27,7 @@ const PostItem = (props) => {
 
 const AllPosts = (props) => {
 
-    let postsData = [{
-        id: 1, texthead: 'Топ стрижек 2021', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-    }, {
-        id: 2, texthead: 'Выбор кресла для барберов', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-    }, {
-        id: 3, texthead: 'Как выбрать “своего” мастера', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-    }];
-
+   
 
     let postsElement = props.postsData.map(item => <PostItem texthead={item.texthead} textmain={item.textmain} />);
 //Выводит массив данных с постс дата поочереди и потом мы только его вызываем в скобках
