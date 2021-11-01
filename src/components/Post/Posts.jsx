@@ -10,23 +10,15 @@ import AllPosts from "./AllPost";
 
 // import s from "..style/Posts.module.css";
 
-
-
-
 const Posts = (props) => {
 
-    let newPostElement = React.createRef();//создаем ссылку
 
-    let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-    }
+
 
     return (
         <div className={s.blog}>
             <h1 className={s.blogh1}>Блог</h1>
-            <textarea ref = {newPostElement}></textarea> 
-            <button type = "button" className = {s.btn_onclick} onClick = { addPost }>add</button>
+            <div>
             <div className={s.container}>
                 <div className={s.row}>
                
@@ -71,8 +63,9 @@ const Posts = (props) => {
                     </div>
                 </div>
                 <div className = {s.btn_div}>
-                <NavLink className = {s.btn_wtch}  to="/AllPost" addPost = {props.addPost}  >Посмотреть все</NavLink></div>
+                <NavLink className = {s.btn_wtch}  to="/AllPost" addpost = {props.addpost}  >Посмотреть все</NavLink></div>
             </div>
+        </div>
         </div>
     );
 }

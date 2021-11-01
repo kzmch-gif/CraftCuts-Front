@@ -12,23 +12,27 @@ import Login from "./components/Login/Login";
 import AllPosts from "./components/Post/AllPost";
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
 
-        <Route path = "/main" render = { () => <MainSlider /> }/>
-        <Route path = "/post" render = { () => <Posts /> } addPost = {props.addPost} />
-        <Route path = "/dialogs" render = { () => <Dialogs /> }/>
-        <Route path = "/login" render = { () => <Login /> }/>
-        <Route path = "/AllPost" render = { () => <AllPosts postsData = {props.appState.postsData} 
-          addPost = {props.addPost}
-        /> }/> `  `
-        <Route path = "/cabinet" render = { () => <Cabinet /> }/>
+        <Route path="/main" render={() => <MainSlider />} />
+        <Route path="/post" render={() => <Posts />} 
+          addpost={props.addpost} />
+        <Route path="/dialogs" render={() => <Dialogs />} />
+        <Route path="/login" render={() => <Login />} />
+        
+        <Route path="/AllPost" render={() => <AllPosts postsData={props.state.postsData} 
+          addpost={props.addpost} newPostText = {props.state.newPostText}  updateNewPostText = {props.updateNewPostText}
+        />} />
+        <Route path="/cabinet" render={() => <Cabinet />} />
 
         <Footer />
       </div>
     </BrowserRouter>
+    
   );
 };
 

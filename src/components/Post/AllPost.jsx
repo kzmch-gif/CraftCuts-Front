@@ -27,26 +27,43 @@ const PostItem = (props) => {
 
 const AllPosts = (props) => {
 
-   
-
+ 
+ 
     let postsElement = props.postsData.map(item => <PostItem texthead={item.texthead} textmain={item.textmain} />);
-//Выводит массив данных с постс дата поочереди и потом мы только его вызываем в скобках
+    
+    //Выводит массив данных с постс дата поочереди и потом мы только его вызываем в скобках
+
+
+    let newPostElement = React.createRef();//создаем ссылку
+    
+    let addpost = () => {
+        let text = newPostElement.current.value;
+        props.addpost(text);
+        newPostElement.current.value = '';
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
 
     return (
-        <div className={s.blog}>
-            <h1 className={s.blogh1}>Блог</h1>
-            <div className={s.container}>
-                <div className={s.row}>
-                    {postsElement}
+        <><div>
+            <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} /> </div><div>
+                <button type="button" className={s.btn_onclick} onClick={addpost}>add</button></div><div className={s.blog}>
+                <h1 className={s.blogh1}>Блог</h1>
+                <div className={s.container}>
+                    <div className={s.row}>
+                        {postsElement}
+                    </div>
+                    <div className={s.row}>
+                        {postsElement}
+                    </div>
+                    <div className={s.row}>
+                        {postsElement}
+                    </div>
                 </div>
-                <div className={s.row}>
-                    {postsElement}
-                </div>
-                <div className={s.row}>
-                    {postsElement} 
-                </div>
-            </div>
-        </div>
+            </div></>
     );
 }
 
