@@ -25,7 +25,7 @@ const App = (props) => {
         <Route path="/login" render={() => <Login />} />
         
         <Route path="/AllPost" render={() => <AllPosts postsData={props.state.postsData} 
-          addpost={props.addpost} newPostText = {props.state.newPostText}  updateNewPostText = {props.updateNewPostText}
+          dispatch={props.dispatch} 
         />} />
         <Route path="/cabinet" render={() => <Cabinet />} />
 

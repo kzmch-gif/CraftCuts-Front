@@ -5,6 +5,9 @@ import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
 import App from "../../App";
+import {addPostActionCreator} from "../../redux/state";
+import {updateNewPostTextActionCreator} from "../../redux/state";
+
 const PostItem = (props) => {
 
     return (
@@ -25,26 +28,22 @@ const PostItem = (props) => {
 }
 
 
+
 const AllPosts = (props) => {
-
- 
- 
     let postsElement = props.postsData.map(item => <PostItem texthead={item.texthead} textmain={item.textmain} />);
-    
     //Выводит массив данных с постс дата поочереди и потом мы только его вызываем в скобках
-
 
     let newPostElement = React.createRef();//создаем ссылку
     
     let addpost = () => {
-        let text = newPostElement.current.value;
-        props.addpost(text);
-        newPostElement.current.value = '';
+        props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+       // let action = newPostElement.current.value;
+       let action  = updateNewPostTextActionCreator(text);
+        props.dispatch(action);
     }
 
     return (

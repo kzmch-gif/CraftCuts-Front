@@ -1,35 +1,73 @@
-import { rerenderEntireTree } from "../render";
+let store = {
+  _state: {
+    postsData: [{
+      id: 1, texthead: 'Топ стрижек 2021', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
+    }, {
+      id: 2, texthead: 'Выбор кресла для барберов', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
+    }, {
+      id: 3, texthead: 'Как выбрать “своего” мастера', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
+    }],
 
-let state = {
-  postsData: [{
-    id: 1, texthead: 'Топ стрижек 2021', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-  }, {
-    id: 2, texthead: 'Выбор кресла для барберов', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-  }, {
-    id: 3, texthead: 'Как выбрать “своего” мастера', textmain: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....'
-  }],
-
-  newPostText: 'it-kamasutra'
+    newPostText: 'it-kamasutra'
+  },
+  _callSubscriber() {
+    console.log('state was changed');
+  },
 
 
+  getState() {
+    return this._state;
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer; // observer - наблюдатель - паттерн
+  },
 
+
+  addpost() {
+    let newPost = {
+      id: 4,
+      texthead: this._state.newPostText,
+      textmain: "lorem lalallal"
+    };
+    this._state.postsData.push(newPost);
+    this._state.newPostText = '';
+    this._callSubscriber(this._state);
+  },
+  updateNewPostText(newText) {
+    this._state.newPostText = newText;
+    this._callSubscriber(this._state);
+  },
+
+  dispatch(action) { //  { type: 'название действия  например ADD-POST' }
+
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 4,
+        texthead: this._state.newPostText,
+        textmain: "lorem lalallal"
+      };
+      this._state.postsData.push(newPost);
+      this._state.newPostText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
+
+  }
+}
+ 
+
+export const addPostActionCreator = () => {
+  return { type: 'ADD-POST' }
 }
 
- export let addpost = (postMessage) => {
-
-  let newPost = {
-    id: 4,
-    texthead: postMessage,
-    textmain: "lorem lalallal"
-  };
-
-  state.postsData.push(newPost);
-  rerenderEntireTree(state);
+export const updateNewPostTextActionCreator = (text) => {
+  return { type: 'UPDATE-NEW-POST-TEXT', newText: text }
 }
 
-export let updateNewPostText = (newText) => {
-  state.newPostText = newText;
-  rerenderEntireTree(state);
-}
+export default store;
+window.store = store;
 
-export default state;
+
+
