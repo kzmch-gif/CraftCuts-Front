@@ -1,3 +1,9 @@
+import newPostTextReducer from "./newPostText-reducer";
+import postsDataReducer from "./postsData-reducer";
+
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {
   _state: {
     postsData: [{
@@ -40,30 +46,23 @@ let store = {
 
   dispatch(action) { //  { type: 'название действия  например ADD-POST' }
 
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 4,
-        texthead: this._state.newPostText,
-        textmain: "lorem lalallal"
-      };
-      this._state.postsData.push(newPost);
-      this._state.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.newPostText = action.newText;
+    this._state.postsData = postsDataReducer(this._state.postsData, action);
+    this._state.newPostText = newPostTextReducer(this._state.newPostText, action);
+
       this._callSubscriber(this._state);
     }
 
   }
-}
+
  
 
 export const addPostActionCreator = () => {
-  return { type: 'ADD-POST' }
+
+  return { type: ADD_POST }
 }
 
 export const updateNewPostTextActionCreator = (text) => {
-  return { type: 'UPDATE-NEW-POST-TEXT', newText: text }
+  return { type: UPDATE_NEW_POST_TEXT, newText: text }
 }
 
 export default store;

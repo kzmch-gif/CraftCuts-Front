@@ -5,8 +5,8 @@ import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
 import App from "../../App";
-import {addPostActionCreator} from "../../redux/state";
-import {updateNewPostTextActionCreator} from "../../redux/state";
+import {addPostActionCreator} from "../../redux/store";
+import {updateNewPostTextActionCreator} from "../../redux/store";
 
 const PostItem = (props) => {
 
