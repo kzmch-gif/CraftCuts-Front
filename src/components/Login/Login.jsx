@@ -3,6 +3,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import s from "./Login.module.css";
 import imagecol from "./login_image.png";
+import { NavLink } from "react-router-dom";
+import Cabinet from "../UserCabinet/Cabinet";
+
 
 
 export default function Login() {
@@ -13,10 +16,7 @@ export default function Login() {
         return email.length > 0 && password.length > 0;
     }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
-
+  
     return (
         <div className={s.row}>
             <div className={s.col_6}>
@@ -27,7 +27,7 @@ export default function Login() {
                 </h5>
                 <h1 className={s.login}>Войти</h1>
                 <div className={s.Login}>
-                    <Form onSubmit={handleSubmit} >
+                    <Form>
                         <Form.Group size="lg" controlId="email" >
                             <Form.Label>Email</Form.Label>
                             <Form.Control  width = "75%"
@@ -45,9 +45,10 @@ export default function Login() {
                                 onChange={(e) => setPassword(e.target.value)} className={s.password_input}
                             />
                         </Form.Group>
-                        <Button block size="lg" type="submit" disabled={!validateForm()} className={s.btn_login}>
+                    
+                        <NavLink to = "/cabinet" block size="lg" className={s.btn_login}>
                             Login
-                        </Button>
+                        </NavLink>
                     </Form>
                 </div>
             </div>

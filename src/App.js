@@ -28,7 +28,7 @@ const App = (props) => {
           dispatch={props.dispatch} 
         />} />
         <Route path="/cabinet" render={() => <Cabinet />} />
-
+       
         <Footer />
       </div>
     </BrowserRouter>

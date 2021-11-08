@@ -78,6 +78,9 @@
     opacity: 2;
     font-family: 'Montserrat', sans-serif;
     border: none;
+    padding: 10px 95px;
+        text-decoration: none;
+        font-size: 20px;
 }
 
 .imagecol{
