@@ -1,0 +1,59 @@
+
+.h1Online{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.servicesblock{
+    text-align: -webkit-center;
+    margin-top: 50px;
+}
+.h3Choose{
+    margin-left: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.specialist{
+    width: 50%;
+    height: 200px;
+    background-color: #e6ceac;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-bottom: 25px;
+    display: flex;
+}
+.specialist:hover{
+    background-color: #e4c396;
+}
+
+.services{
+    width: 50%;
+    height: 200px;
+    background-color: #e6ceac;
+    border-radius: 10px;
+    margin-left: 50px;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.services:hover{
+    background-color: #e4c396;
+}
+.pic1{
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.specialisth4{
+    align-self: center;
+    margin-left: 50px;
+    width: 50%;
+    font-size: 25px;
+    text-decoration: none !important;
+    color: aliceblue;
+}

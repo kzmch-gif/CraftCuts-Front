@@ -10,6 +10,8 @@ import { BrowserRouter } from "react-router-dom";
 import Cabinet from "./components/UserCabinet/Cabinet";
 import Login from "./components/Login/Login";
 import AllPosts from "./components/Post/AllPost";
+import Booking from "./components/OnlineBooking/Booking";
+import Specialists from "./components/OnlineBooking/Specialists/Specialists";
 
 const App = (props) => {
 
@@ -28,7 +30,8 @@ const App = (props) => {
           dispatch={props.dispatch} 
         />} />
         <Route path="/cabinet" render={() => <Cabinet />} />
-       
+        <Route path="/online" render={() => <Booking/>} />
+        <Route path="/specialists" render={() => <Specialists/>} />
         <Footer />
       </div>
     </BrowserRouter>
