@@ -1,0 +1,46 @@
+.masterh1{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.master1{
+    width: 600px;
+    background-color: rgb(82, 61, 61);
+    height: 200px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 10px grey 10px 10px;
+}
+.master1:hover{
+    background-color: rgb(156, 130, 82);
+}
+
+.name{
+    color: white;
+    padding-left: 30px;
+    padding-top: 80px;
+}
+
+.type{
+    padding-top: 90px;
+    color: white;
+   
+    margin-left: auto;margin-right: auto;
+}
+
+.end{
+    border: 1px solid red;
+    height: 40px;
+    text-align: center;
+    margin-top: 80px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-right: 20px;
+    background-color: tomato;
+}

@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import AllPosts from "./components/Post/AllPost";
 import Booking from "./components/OnlineBooking/Booking";
 import Specialists from "./components/OnlineBooking/Specialists/Specialists";
+import EndBooking from "./components/OnlineBooking/EndBooking/EndBooking";
 
 const App = (props) => {
 
@@ -32,6 +33,7 @@ const App = (props) => {
         <Route path="/cabinet" render={() => <Cabinet />} />
         <Route path="/online" render={() => <Booking/>} />
         <Route path="/specialists" render={() => <Specialists/>} />
+        <Route path="/EndBooking" render={() => <EndBooking/>} />
         <Footer />
       </div>
     </BrowserRouter>
