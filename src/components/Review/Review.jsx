@@ -45,7 +45,7 @@ export default function Review() {
                 <div className={s.col6}>
                     <div className={s.blockright}>
                         <h3 className={s.getreview}>Оставьте свой отзыв здесь!</h3>
-                        <h6 className = {s.}>Чтобы оставить свой отзыв вы должны войти в аккаунт</h6>
+                        <h6 className = {s.h6login}>Чтобы оставить свой отзыв вы должны войти в аккаунт</h6>
                         <div>
                             <input className = {s.inputlogin} type="text" value="login" /></div>
                         <div>

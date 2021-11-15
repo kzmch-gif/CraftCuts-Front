@@ -15,6 +15,7 @@ import Specialists from "./components/OnlineBooking/Specialists/Specialists";
 import EndBooking from "./components/OnlineBooking/EndBooking/EndBooking";
 import About from "./components/About/About";
 import Services from "./components/Services/Services";
+import Review from "./components/Review/Review";
 
 const App = (props) => {
 
@@ -25,6 +26,7 @@ const App = (props) => {
 
         <Route path="/main" render={() => <MainSlider />} />
         <Route path="/about" render={() => <About />} />
+        <Route path="/review" render={() => <Review />} />
         <Route path="/services" render={() => <Services />} />
         <Route path="/post" render={() => <Posts />} 
           addpost={props.addpost} />

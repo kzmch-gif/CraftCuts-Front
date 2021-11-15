@@ -1,0 +1,112 @@
+.review {
+    background-color: #DAC5B5;
+    background-image: url(./abstract-2.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-size: 18%;
+    background-position: top;
+}
+
+.h1 {
+    color: white;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.row {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.row1 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    margin-bottom: 5px;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #83583A;
+}
+.namerewiew{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.col6 {
+    width: 50%;
+    margin-right: 100px;
+}
+
+.blockleft {
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(5px);
+    border-radius: 24px 0px 0px 24px;
+    height: 500px;
+    padding-top: 50px;
+}
+
+.blockright {
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(5px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 0px 24px 24px 0px;
+    height: 500px;
+}
+
+.lefttop {
+    background: #FFFFFF;
+    box-shadow: 0px 40px 30px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.namereview {
+    color: #83583A;
+}
+
+
+.rowhot{
+    display: flex;
+    margin-left: auto;
+}
+.hotline{
+    width: 15px;
+    height: 20px;
+    margin-right: 5px;
+  
+}
+
+.textreview{
+    width: 92%;
+    color: 
+    #83583A;
+    margin-left: auto;margin-right: auto;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 15px;
+}
+
+
+
+.blockright{
+    padding-top: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.getreview{
+    color:   #0F0F0F
+}
