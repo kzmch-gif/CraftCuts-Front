@@ -49,11 +49,11 @@ export default function Review() {
                         <div>
                             <input className = {s.inputlogin} type="text" value="login" /></div>
                         <div>
-                            <input className = {s.inputpassword}  type="text" value="password" /></div>
+                            <input className = {s.inputlogin}  type="text" value="password" /></div>
                         <div>
-                            <input className = {s.inputtext}  type="text" value="text of review" />
+                            <input className = {s.inputlogin}  type="text" value="text of review" />
                         </div>
-
+                        <button className = {s.send}>Отправить</button>
                     </div>
                 </div>
 
