@@ -21,7 +21,35 @@ function MainSlider() {
     setIndex(selectedIndex);
   };
 
+ 
+
+  function clickHandler(){
+    fetch("http://localhost:64169", {
+      method : 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+     
+       action:1
+     
+      })
+    }).then((response) => response.json())
+    .then((responseJson) => {
+
+// Showing response message coming from the server after inserting records.
+      alert.alert(responseJson);
+
+    }).catch((error) => {
+      console.error(error);
+    });
+
+
+}
+
   return (
+    <div>
     <Carousel fade activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img className="d-block w-100" src={slide1} alt="First slide" />
@@ -49,6 +77,9 @@ function MainSlider() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    <h1>Hello its test api</h1>
+    <button onClick = {clickHandler}>Go</button>
+    </div>
   );
 }
 

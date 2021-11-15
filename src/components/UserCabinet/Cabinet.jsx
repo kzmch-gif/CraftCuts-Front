@@ -13,7 +13,7 @@ const Cabinet = () => {
         <h2 className={s.h2text}>Личный кабинет</h2>
         <div className={s.infouser_block}>
           <div className={s.row}>
-            <h3 className={s.username}>James Roland</h3>
+            <h3 className={s.username}>John</h3>
             <div className={s.btn_change}>
               <NavLink className={`me-3 ${s.change}`} to="/main">
                 Изменить профиль

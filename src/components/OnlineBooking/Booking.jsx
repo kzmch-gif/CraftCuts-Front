@@ -5,7 +5,7 @@ import Header from "../Header_Footer/Header";
 import pic1 from "./outline_II.png";
 import pic2 from "./solid.png";
 
-export default function Cabinet () {
+export default function Booking () {
     return (
         <div className = {s.container}>
             <h1 className = {s.h1Online}>Онлайн запись</h1>

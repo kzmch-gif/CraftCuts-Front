@@ -13,6 +13,8 @@ import AllPosts from "./components/Post/AllPost";
 import Booking from "./components/OnlineBooking/Booking";
 import Specialists from "./components/OnlineBooking/Specialists/Specialists";
 import EndBooking from "./components/OnlineBooking/EndBooking/EndBooking";
+import About from "./components/About/About";
+import Services from "./components/Services/Services";
 
 const App = (props) => {
 
@@ -22,6 +24,8 @@ const App = (props) => {
         <Header />
 
         <Route path="/main" render={() => <MainSlider />} />
+        <Route path="/about" render={() => <About />} />
+        <Route path="/services" render={() => <Services />} />
         <Route path="/post" render={() => <Posts />} 
           addpost={props.addpost} />
         <Route path="/dialogs" render={() => <Dialogs />} />
