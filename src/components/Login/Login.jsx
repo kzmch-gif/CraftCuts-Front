@@ -36,8 +36,9 @@ export default function Login() {
             },
             body: JSON.stringify({item})
         });
-        debugger;
+      
         result = await result.json();
+        debugger;
         localStorage.setItem("user-info",JSON.stringify(result));
         history.push("/cabinet")
     }

@@ -17,6 +17,7 @@ import About from "./components/About/About";
 import Services from "./components/Services/Services";
 import Review from "./components/Review/Review";
 import Kastom from "./components/Kastom/Kastom";
+import Registration from "./components/Registration/Registration";
 
 const App = (props) => {
 
@@ -25,6 +26,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <Switch>
+
           <Route path="/main" render={() => <MainSlider />} />
           <Route path="/about" render={() => <About />} />
           <Route path="/review" render={() => <Review />} />
@@ -34,6 +36,7 @@ const App = (props) => {
             addpost={props.addpost} />
           <Route path="/dialogs" render={() => <Dialogs />} />
           <Route path="/login" render={() => <Login />} />
+          <Route path = "/registration" render={() => <Registration />} />
           <Route path="/AllPost" render={() => <AllPosts postsData={props.state.postsData}
             dispatch={props.dispatch}
           />} />
