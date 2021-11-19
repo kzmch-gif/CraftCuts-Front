@@ -3,86 +3,175 @@ import { Container, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 
-const Header = () => {
-  return (
-    <header>
-      <div className="header">
-        <Container>
-          <Row>
-            <ul>
-              <li className={s.item}>
-                <NavLink
-                  className={`nav`}
-                  to="/about"
-                  activeClassName={s.active}
-                >
-                  О нас
-                </NavLink>
-              </li>
-              <li className={s.item}>
-                <NavLink
-                  className={`nav`}
-                  to="/services"
-                  activeClassName={s.active}
-                >
-                  Услуги
-                </NavLink>
-              </li>
-              <li className={s.item}>
-                <NavLink
-                  className={`nav`}
-                  to="/masters"
-                  activeClassName={s.active}
-                >
-                  Мастера
-                </NavLink>
-              </li>
+const Header = ({isLoggedIn, setIsLoggedIn}) => {
+  const handleLogOut = () => {
+    setIsLoggedIn(false);
+  };
 
-              <li className={s.item}>
-                <NavLink
-                  className={`nav`}
-                  to="/review"
-                  activeClassName={s.active}
-                >
-                  Отзывы
-                </NavLink>
-              </li>
-              <li className={s.item}>
-                <NavLink className={`logo me-3 nav`} to="/main">
-                  Craft Cuts
-                </NavLink>
-              </li>
-              <li className={s.item}>
-                <NavLink
-                  className={` nav`}
-                  to="/post"
-                  activeClassName={s.active}
-                >
-                  Блог
-                </NavLink>
-              </li>
-              <li className={s.item}>
-                <NavLink
-                  className={` ${s.btn_online}`}
-                  to="/online"
-                  activeClassName={s.active}
-                >
-                  Записаться онлайн
-                </NavLink>
-              </li>
-              <li className={s.item}>
-                <NavLink
-                  className={` ${s.btn_join}`}
-                  to="/login"
-                  activeClassName={s.active}
-                >
-                  Войти
-                </NavLink>
-              </li>
-            </ul>
-          </Row>
-        </Container>
-      </div>
+  return (
+
+    <header>
+      {
+        isLoggedIn ?
+            <div className="header">
+              <Container>
+                <Row>
+                  <ul>
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/about"
+                          activeClassName={s.active}
+                      >
+                        О нас
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/services"
+                          activeClassName={s.active}
+                      >
+                        Услуги
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/masters"
+                          activeClassName={s.active}
+                      >
+                        Мастера
+                      </NavLink>
+                    </li>
+
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/review"
+                          activeClassName={s.active}
+                      >
+                        Отзывы
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink className={`logo me-3 nav`} to="/main">
+                        Craft Cuts
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={` nav`}
+                          to="/post"
+                          activeClassName={s.active}
+                      >
+                        Блог
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={` ${s.btn_online}`}
+                          to="/online"
+                          activeClassName={s.active}
+                      >
+                        Записаться онлайн
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={` ${s.btn_join}`}
+                          to="/cabinet"
+                          activeClassName={s.active}
+                      >
+                        Личный кабинет
+                      </NavLink>
+                    </li>
+                  </ul>
+                </Row>
+              </Container>
+            </div>
+
+            :
+
+            <div className="header">
+              <Container>
+                <Row>
+                  <ul>
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/about"
+                          activeClassName={s.active}
+                      >
+                        О нас
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/services"
+                          activeClassName={s.active}
+                      >
+                        Услуги
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/masters"
+                          activeClassName={s.active}
+                      >
+                        Мастера
+                      </NavLink>
+                    </li>
+
+                    <li className={s.item}>
+                      <NavLink
+                          className={`nav`}
+                          to="/review"
+                          activeClassName={s.active}
+                      >
+                        Отзывы
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink className={`logo me-3 nav`} to="/main">
+                        Craft Cuts
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={` nav`}
+                          to="/post"
+                          activeClassName={s.active}
+                      >
+                        Блог
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={` ${s.btn_online}`}
+                          to="/online"
+                          activeClassName={s.active}
+                      >
+                        Записаться онлайн
+                      </NavLink>
+                    </li>
+                    <li className={s.item}>
+                      <NavLink
+                          className={` ${s.btn_join}`}
+                          to="/login"
+                          activeClassName={s.active}
+                      >
+                        Войти
+                      </NavLink>
+                    </li>
+                  </ul>
+                </Row>
+              </Container>
+            </div>
+      }
+
     </header>
   );
 };

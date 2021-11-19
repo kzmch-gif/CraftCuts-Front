@@ -1,11 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from "./Cabinet.module.css";
-import { NavLink } from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import Header from "../Header_Footer/Header";
 import usericon from "../UserCabinet/user_icon.png";
 import starpic from "../UserCabinet/heart.png";
 
-const Cabinet = () => {
+const Cabinet = ({setIsLoggedIn, isLoggedIn}) => {
+
+    const history = useHistory();
+    function logout(){
+        setIsLoggedIn(false);
+        // if(isLoggedIn == false){
+        //     history.push("/login")
+        // }
+    }
+
+    const handleLogOut = () => {
+        setIsLoggedIn(false);
+    };
+
   <Header />;
   return (
     <div className={s.cabinet_wrapper}>
@@ -66,8 +79,16 @@ const Cabinet = () => {
                   activeClassName={s.active}
                 >
                   Записаться онлайн
-                </NavLink>
+            </NavLink>
         </div>
+            {/*<button className = {s.promo_btn} onClick={logout}>Выйти</button>*/}
+            <NavLink  onClick={handleLogOut}
+                      className={` ${s.btn_online}`}
+                      to="/login"
+                      activeClassName={s.active}>
+                Выйти
+
+            </NavLink>
         </div>
       </div>
     </div>

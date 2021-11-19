@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./components/Header_Footer/Header";
 import "./App.css";
 import Footer from "./components/Header_Footer/Footer";
@@ -17,11 +17,12 @@ import About from "./components/About/About";
 import Services from "./components/Services/Services";
 
 const App = (props) => {
+const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
         <Route path="/main" render={() => <MainSlider />} />
         <Route path="/about" render={() => <About />} />
@@ -29,12 +30,12 @@ const App = (props) => {
         <Route path="/post" render={() => <Posts />} 
           addpost={props.addpost} />
         <Route path="/dialogs" render={() => <Dialogs />} />
-        <Route path="/login" render={() => <Login />} />
+        <Route path="/login" render={() => <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
         
         <Route path="/AllPost" render={() => <AllPosts postsData={props.state.postsData} 
           dispatch={props.dispatch} 
         />} />
-        <Route path="/cabinet" render={() => <Cabinet />} />
+        <Route path="/cabinet" render={() => <Cabinet isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path="/online" render={() => <Booking/>} />
         <Route path="/specialists" render={() => <Specialists/>} />
         <Route path="/EndBooking" render={() => <EndBooking/>} />

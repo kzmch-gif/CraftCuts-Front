@@ -9,50 +9,85 @@ import { useHistory } from 'react-router-dom';
 
 
 
-export default function Login() {
-  
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+export default function Login({setIsLoggedIn, isLoggedIn}) {
+    const [Email, setEmail] = useState("");
+    const [Password, setPassword] = useState("");
     const history = useHistory();
-   
     useEffect(() => {
-        if(localStorage.getItem('user-info')){
-           
-            history.push("/cabinet");
-         
+        if(localStorage.getItem('user-info') && isLoggedIn == true){
+            history.push("/cabinet")
         }
+    }, [])
 
-    })
-    
     function validateForm() {
-        return email.length > 0 && password.length > 0;
+        return Email.length > 0 && Password.length > 0;
     }
 
-    async function login(){
-        let item = {email, password};
-        debugger;
-        let result = await fetch("craftcutstestapiproject20211011184405.azurewebsites.net/api/Customer/Auth", {
+    async function myLogin(){
+        let item = {Email, Password};
+        let result = await fetch("https://craftcutstestapiproject20211011184405.azurewebsites.net/api/Customer/Auth", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
-                "Accept":  "application/json"
-,               
+                "Accept": "application/json",
             },
-            body: JSON.stringify(item)
+            body: JSON.stringify({item})
         });
-        
-        let res = await result.json();
-       
-        localStorage.setItem("user-info",JSON.stringify(res));
-        history.push("/cabinet");
+        result = await result.json();
+        localStorage.setItem("user-info", JSON.stringify(result));
+        localStorage.setItem("isLoggedIn", true);
+        // setIsLoggedIn(true);
+        history.push("/cabinet")
     }
 
+    async function myLoginAPI(e) {
+        e.preventDefault();
+        let item = {Password, Email};
+        let result = await fetch("https://craftcutstestapiproject20211011184405.azurewebsites.net/api/Customer/Auth", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify({Email: Email, Password: Password}),
+        });
+        console.log({Email, Password});
+        result = await result.json();
+        localStorage.setItem("user-info", JSON.stringify(result));
+        localStorage.setItem('isLoggedIn', true);
+        setIsLoggedIn(true);
+        history.push("/cabinet")
+        console.log(result);
+    }
 
+    async function myLoginAPI2(e) {
 
+        let item = {Email, Password};
+        fetch("https://craftcutstestapiproject20211011184405.azurewebsites.net/api/Customer/Auth", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify({Email, Password}),
+        }).then((response) => response.json()
+            .then((responseJson) => {localStorage.setItem('user-info', JSON.stringify(responseJson))} )
+                .then(() => {localStorage.setItem('isLoggedIn', true)})
+                .then(() => {setIsLoggedIn(true)})
+                .then(() => {history.push("/cabinet")})
+            )
+            .catch(error => console.error('Error', error));
+    }
 
+    const handleLogin = (e)=> {
+        e.preventDefault()
+        localStorage.setItem('isLoggedIn', true);
+        setIsLoggedIn(true);
+        history.push('/cabinet');
+    }
 
     return (
+        <form onSubmit={myLoginAPI}>
         <div className={s.row}>
             <div className={s.col_6}>
                 <li className={s.item}>
@@ -64,10 +99,11 @@ export default function Login() {
                 <div className={s.Login}>
                     <input type="text" placeholder="email" onChange={(e)=>setEmail(e.target.value)} className="s.email_input"/>
                     <input type="text" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className="s.password_input"/>
-                        <button onClick={login} to = "/cabinet"className={s.btn_login}>Login</button>
-                        {/*<NavLink to = "/cabinet" block size="lg" className={s.btn_login}>*/}
-                        {/*    Login*/}
-                        {/*</NavLink>*/}
+                    <button type="submit" className={s.btn_login}>Login </button>
+                    {/*<button onClick={myLoginAPI} className={s.btn_login}>Login</button>*/}
+                    {/*<NavLink to = "/cabinet" block size="lg" className={s.btn_login}>*/}
+                    {/*    Login*/}
+                    {/*</NavLink>*/}
 
                 </div>
             </div>
@@ -76,5 +112,6 @@ export default function Login() {
                     <img className = {s.imagecol} src={imagecol} alt="image_left"></img></div>
             </div>
         </div>
+        </form>
     );
 }
