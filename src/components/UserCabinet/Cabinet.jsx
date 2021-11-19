@@ -73,11 +73,11 @@ const Cabinet = ({setIsLoggedIn, isLoggedIn}) => {
                 <span className = {s.textspan}>15.08 16:00</span>
                 <button className = {s.starpic}></button>
             </div>
-            <NavLink
+            <NavLink>
                   className={` ${s.btn_online}`}
                   to="/online"
                   activeClassName={s.active}
-                >
+
                   Записаться онлайн
             </NavLink>
         </div>
