@@ -16,7 +16,7 @@ const Cabinet = () => {
             <h3 className={s.username}>John</h3>
             <div className={s.btn_change}>
               <NavLink className={`me-3 ${s.change}`} to="/main">
-                Изменить профиль
+                Выйти
               </NavLink>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Cabinet = () => {
         <div className = {s.receptions_block}>
             <div className = {s.row}>
                 <h5 className = {s.h5_resept}>Ваши записи</h5>
-                <NavLink to = "#" className = {s.h6_resept}>Посмотреть все</NavLink>
+               
             </div>
             <div className = {s.near}><span>Ближайшие</span></div>
             <div className = "coming"><span></span></div>
