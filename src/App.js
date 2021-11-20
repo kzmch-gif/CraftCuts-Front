@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./components/Header_Footer/Header";
 import "./App.css";
 import Footer from "./components/Header_Footer/Footer";
@@ -20,32 +20,31 @@ import Kastom from "./components/Kastom/Kastom";
 import Registration from "./components/Registration/Registration";
 
 const App = (props) => {
+const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
-        <Switch>
 
-          <Route path="/main" render={() => <MainSlider />} />
-          <Route path="/about" render={() => <About />} />
-          <Route path="/review" render={() => <Review />} />
-          <Route path="/services" render={() => <Services />} />
-          <Route path="/kastom" render={() => <Kastom />} />
-          <Route path="/post" render={() => <Posts />}
-            addpost={props.addpost} />
-          <Route path="/dialogs" render={() => <Dialogs />} />
-          <Route path="/login" render={() => <Login />} />
-          <Route path = "/registration" render={() => <Registration />} />
-          <Route path="/AllPost" render={() => <AllPosts postsData={props.state.postsData}
-            dispatch={props.dispatch}
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+<Switch>
+        <Route path="/main" render={() => <MainSlider />} />
+        <Route  path="/about" render={() => <About />} />
+        <Route path="/services" render={() => <Services />} />
+        <Route path="/post" render={() => <Posts />} 
+          addpost={props.addpost} />
+        <Route path="/dialogs" render={() => <Dialogs />} />
+        <Route path="/login" render={() => <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        
+        <Route path="/AllPost" render={() => <AllPosts postsData={props.store.postsData}
+            updateNewPostText = {props.store.updateNewPostText}
           />} />
-          <Route path="/cabinet" render={() => <Cabinet />} />
-          <Route path="/online" render={() => <Booking />} />
-          <Route path="/specialists" render={() => <Specialists />} />
-          <Route path="/EndBooking" render={() => <EndBooking />} />
-          <Footer />
-        </Switch>
+        <Route path="/cabinet" render={() => <Cabinet isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+        <Route path="/online" render={() => <Booking/>} />
+        <Route path="/specialists" render={() => <Specialists/>} />
+        <Route path="/EndBooking" render={() => <EndBooking/>} /> 
+
+ </Switch>
       </div>
     </BrowserRouter>
 
