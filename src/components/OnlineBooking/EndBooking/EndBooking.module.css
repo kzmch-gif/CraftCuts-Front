@@ -13,7 +13,58 @@
     border-radius: 10px;
     margin-left: auto;margin-right: auto;
     padding: 5px 15px;
-    color: white;
+    color: brown;
+    font-weight: 500;
     text-decoration: none;
-    background-color: rgb(85, 47, 47);
+    transition: 0.5s;
+  
+}
+.goback:hover{
+    text-decoration: none;
+    color: white;
+    background-color: brown;
+}
+.we{
+    margin-bottom: 25px;
+}
+
+.table{
+    border: 2px solid brown;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+   background-color: rgb(139, 63, 63);
+   color: white;
+    margin-bottom: 25px;
+}
+
+.headtable{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid white;
+    margin-bottom: 5px;
+}
+.type{
+    margin-right: 20px;
+}
+
+.name{
+    margin-right: 20px;
+}
+.time{
+    margin-right: 10px;
+}
+
+.data{
+    display: flex;
+    justify-content: center;
+}
+
+.ht_text{
+    margin-right: 20px;
+}
+
+.goback_block{
+    text-align: center;
 }

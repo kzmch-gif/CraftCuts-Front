@@ -11,6 +11,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
   return (
 
     <header>
+
       {
         isLoggedIn ?
             <div className="header">
@@ -35,15 +36,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                         Услуги
                       </NavLink>
                     </li>
-                    <li className={s.item}>
-                      <NavLink
-                          className={`nav`}
-                          to="/masters"
-                          activeClassName={s.active}
-                      >
-                        Мастера
-                      </NavLink>
-                    </li>
+                   
 
                     <li className={s.item}>
                       <NavLink
@@ -115,16 +108,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                         Услуги
                       </NavLink>
                     </li>
-                    <li className={s.item}>
-                      <NavLink
-                          className={`nav`}
-                          to="/masters"
-                          activeClassName={s.active}
-                      >
-                        Мастера
-                      </NavLink>
-                    </li>
-
+                   
                     <li className={s.item}>
                       <NavLink
                           className={`nav`}
@@ -171,6 +155,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
               </Container>
             </div>
       }
+
 
     </header>
   );

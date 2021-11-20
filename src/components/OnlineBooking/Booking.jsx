@@ -2,8 +2,9 @@ import React from "react";
 import s from "./Booking.module.css";
 import { NavLink } from "react-router-dom";
 import Header from "../Header_Footer/Header";
-import pic1 from "./outline_II.png";
-import pic2 from "./solid.png";
+import pic1 from "./master.png";
+import pic2 from "./services.png";
+
 
 export default function Booking () {
     return (

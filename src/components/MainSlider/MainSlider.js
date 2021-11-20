@@ -54,31 +54,29 @@ function MainSlider() {
       <Carousel.Item>
         <img className="d-block w-100" src={slide1} alt="First slide" />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Craft-Cuts</h3>
+          <p>Барбершоп созданный профессиональными барберами. Гарантия качества. Запишись онлайн! Чисто мужское пространство во всех смыслах. Бритье бритвой.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={slide2} alt="Second slide" />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>Craft-Cuts</h3>
+          <p>лига опытных мужских парикмахеров, где приходят на стрижку к мастеру, а не в парикмахерскую</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={slide3} alt="Third slide" />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+        <h3>Craft-Cuts</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          лучший барбершоп в Украине и мире
           </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    <h1>Hello its test api</h1>
-    <button onClick = {clickHandler}>Go</button>
     </div>
   );
 }
